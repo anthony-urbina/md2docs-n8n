@@ -5,14 +5,14 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "build": "pnpm build ./src/index.ts --outdir ./lib --target node && cp package.json lib/",
-    "build:watch": "pnpm build ./src/index.ts --outdir ./lib --target node --watch",
+    "build": "esbuild src/index.ts --outdir=lib --target=node22 && cp package.json lib/",
+    "build:watch": "esbuild src/index.ts --outdir=lib --target=node --watch",
     "serve": "pnpm run build && firebase emulators:start",
     "shell": "pnpm run build && firebase functions:shell",
     "start": "pnpm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "dev": "pnpm --watch src/index.ts"
+    "dev": "esbuild src/index.ts --outdir=lib --target=node --watch"
   },
   "engines": {
     "node": "22"
