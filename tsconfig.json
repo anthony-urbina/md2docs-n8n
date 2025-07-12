@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     "target": "ES2022",
     "outDir": "lib",
-    "sourceMap": true,
+    "rootDir": "src",
+    "esModuleInterop": true,
     "strict": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "compileOnSave": true,
   "include": ["src"]
 }
